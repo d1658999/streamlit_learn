@@ -5,17 +5,25 @@ import time
 
 
 def main():
-    with st.form("my_form"):
-        st.write("Inside the form")
-        slider_val = st.slider("Form slider", -40, 30)
-        checkbox_val = st.checkbox("Form checkbox")
+    # sidebar
+    with st.sidebar:
 
-        # Every form must have a submit button.
-        submitted = st.form_submit_button("Submit")
-        if submitted:
-            st.write("slider", slider_val, "checkbox", checkbox_val)
+        therm_dis = st.button('Thermal_Charge_Disable',
+                              key='therm_dis', use_container_width=True)
+        text_suffix = st.text_input('suffix_file_name', "")
+        run_ftm = st.button('Run', key='run_ftm', use_container_width=True)
 
-    st.write("Outside the form")
+        print(st.session_state)
+        try:
+            with st.spinner("Running..."):
+                if run_ftm:
+                    time.sleep(1)
+                    # placeholder for the real main function
+
+            st.success("Done!")
+
+        except:
+            st.error('Absorted')
 
 
 if __name__ == "__main__":
