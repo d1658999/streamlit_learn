@@ -1,6 +1,7 @@
 import streamlit as st
 import numpy as np
 import pandas as pd
+import yaml
 
 
 def main():
@@ -28,9 +29,8 @@ def main():
         """
     )
 
+    print(st.session_state)
+
 
 if __name__ == "__main__":
     main()
-
-
-

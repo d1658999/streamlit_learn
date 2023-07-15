@@ -11,7 +11,7 @@
             "module": "streamlit",
             "args": [
                 "run",
-                "./streamlit_ui.py"
+                "./Meta_GUI_Home.py"
             ],
             "justMyCode": true
         }
