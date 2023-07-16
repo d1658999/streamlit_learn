@@ -1,11 +1,11 @@
 import streamlit as st
 import numpy as np
 import pandas as pd
+import ui_parameters
 import yaml
 
 
 def main():
-
     st.set_page_config(
         page_title="Meta_GUI",
         page_icon="👋",
@@ -28,8 +28,6 @@ def main():
         - Explore a []()
         """
     )
-
-    print(st.session_state)
 
 
 if __name__ == "__main__":
