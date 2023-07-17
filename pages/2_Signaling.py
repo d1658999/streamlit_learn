@@ -2,9 +2,11 @@ import streamlit as st
 import numpy as np
 import pandas as pd
 import time
+from setting import *
 
 
 def main():
+
     # specific key name for sidebar
     specifc_name_sidebar = 'signaling'
 

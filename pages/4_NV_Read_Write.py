@@ -5,6 +5,8 @@ import time
 
 
 def main():
+
+
     # sidebar
     with st.sidebar:
 
@@ -13,7 +15,6 @@ def main():
         st.session_state.text_suffix = st.text_input('suffix_file_name', "")
         run_ftm = st.button('Run', key='run_ftm', use_container_width=True)
 
-        print(st.session_state)
         try:
             with st.spinner("Running..."):
                 if run_ftm:

@@ -2,6 +2,7 @@ import streamlit as st
 import numpy as np
 import pandas as pd
 import time
+import setting
 
 
 def sidebar():
@@ -19,7 +20,7 @@ def sidebar():
         try:
             with st.spinner("Running..."):
                 if run_ftm:
-                    time.sleep(3)
+                    time.sleep(1)
                     # placeholder for the real main function
 
             st.success("Done!")
@@ -378,31 +379,31 @@ def tabs():
             lb_all_fr1_state = col1_lb_fr1.checkbox(
                 'LB_ALL', key=f'lb_all_fr1_{specifc_name}')
             b5_fr1_state = col1_lb_fr1.checkbox(
-                'N5', key=f'b5_fr1_{specifc_name}', value=lb_all_fr1_checked(lb_all_fr1_state))
+                'N5', key=f'b5_fr1_{specifc_name}', value=st.session_state[f'lb_all_fr1_{specifc_name}'])
             b8_fr1_state = col1_lb_fr1.checkbox(
-                'N8', key=f'b8_fr1_{specifc_name}', value=lb_all_fr1_checked(lb_all_fr1_state))
+                'N8', key=f'b8_fr1_{specifc_name}', value=st.session_state[f'lb_all_fr1_{specifc_name}'])
             b12_fr1_state = col1_lb_fr1.checkbox(
-                'N12', key=f'b12_fr1_{specifc_name}', value=lb_all_fr1_checked(lb_all_fr1_state))
+                'N12', key=f'b12_fr1_{specifc_name}', value=st.session_state[f'lb_all_fr1_{specifc_name}'])
             b13_fr1_state = col1_lb_fr1.checkbox(
-                'N13', key=f'b13_fr1_{specifc_name}', value=lb_all_fr1_checked(lb_all_fr1_state))
+                'N13', key=f'b13_fr1_{specifc_name}', value=st.session_state[f'lb_all_fr1_{specifc_name}'])
             b14_fr1_state = col1_lb_fr1.checkbox(
-                'N14', key=f'b14_fr1_{specifc_name}', value=lb_all_fr1_checked(lb_all_fr1_state))
+                'N14', key=f'b14_fr1_{specifc_name}', value=st.session_state[f'lb_all_fr1_{specifc_name}'])
             b20_fr1_state = col1_lb_fr1.checkbox(
-                'N20', key=f'b20_fr1_{specifc_name}', value=lb_all_fr1_checked(lb_all_fr1_state))
+                'N20', key=f'b20_fr1_{specifc_name}', value=st.session_state[f'lb_all_fr1_{specifc_name}'])
             b24_fr1_state = col1_lb_fr1.checkbox(
-                'N24', key=f'b24_fr1_{specifc_name}', value=lb_all_fr1_checked(lb_all_fr1_state))
+                'N24', key=f'b24_fr1_{specifc_name}', value=st.session_state[f'lb_all_fr1_{specifc_name}'])
             b26_fr1_state = col1_lb_fr1.checkbox(
-                'N26', key=f'b26_fr1_{specifc_name}', value=lb_all_fr1_checked(lb_all_fr1_state))
+                'N26', key=f'b26_fr1_{specifc_name}', value=st.session_state[f'lb_all_fr1_{specifc_name}'])
             b28a_fr1_state = col1_lb_fr1.checkbox(
-                'N28A', key=f'b28a_fr1_{specifc_name}', value=lb_all_fr1_checked(lb_all_fr1_state))
+                'N28A', key=f'b28a_fr1_{specifc_name}', value=st.session_state[f'lb_all_fr1_{specifc_name}'])
             b28b_fr1_state = col1_lb_fr1.checkbox(
-                'N28B', key=f'b28b_fr1_{specifc_name}', value=lb_all_fr1_checked(lb_all_fr1_state))
+                'N28B', key=f'b28b_fr1_{specifc_name}', value=st.session_state[f'lb_all_fr1_{specifc_name}'])
             b29_fr1_state = col1_lb_fr1.checkbox(
-                'N29', key=f'b29_fr1_{specifc_name}', value=lb_all_fr1_checked(lb_all_fr1_state))
+                'N29', key=f'b29_fr1_{specifc_name}', value=st.session_state[f'lb_all_fr1_{specifc_name}'])
             b32_fr1_state = col1_lb_fr1.checkbox(
-                'N32', key=f'b32_fr1_{specifc_name}', value=lb_all_fr1_checked(lb_all_fr1_state))
+                'N32', key=f'b32_fr1_{specifc_name}', value=st.session_state[f'lb_all_fr1_{specifc_name}'])
             b71_fr1_state = col1_lb_fr1.checkbox(
-                'N71', key=f'b71_fr1_{specifc_name}', value=lb_all_fr1_checked(lb_all_fr1_state))
+                'N71', key=f'b71_fr1_{specifc_name}', value=st.session_state[f'lb_all_fr1_{specifc_name}'])
 
         with col2_mhb:
             # container
@@ -415,37 +416,37 @@ def tabs():
             mhb_all_fr1_state = col2_mhb_fr1.checkbox(
                 'MHB_ALL', key=f'mhb_all_fr1_{specifc_name}')
             b1_fr1_state = col2_mhb_fr1.checkbox(
-                'N1', key=f'b1_fr1_{specifc_name}', value=mhb_all_fr1_checked(mhb_all_fr1_state))
+                'N1', key=f'b1_fr1_{specifc_name}', value=st.session_state[f'mhb_all_fr1_{specifc_name}'])
             b2_fr1_state = col2_mhb_fr1.checkbox(
-                'N2', key=f'b2_fr1_{specifc_name}', value=mhb_all_fr1_checked(mhb_all_fr1_state))
+                'N2', key=f'b2_fr1_{specifc_name}', value=st.session_state[f'mhb_all_fr1_{specifc_name}'])
             b3_fr1_state = col2_mhb_fr1.checkbox(
-                'N3', key=f'b3_fr1_{specifc_name}', value=mhb_all_fr1_checked(mhb_all_fr1_state))
+                'N3', key=f'b3_fr1_{specifc_name}', value=st.session_state[f'mhb_all_fr1_{specifc_name}'])
             b7_fr1_state = col2_mhb_fr1.checkbox(
-                'N7', key=f'b7_fr1_{specifc_name}', value=mhb_all_fr1_checked(mhb_all_fr1_state))
+                'N7', key=f'b7_fr1_{specifc_name}', value=st.session_state[f'mhb_all_fr1_{specifc_name}'])
             b30_fr1_state = col2_mhb_fr1.checkbox(
-                'N30', key=f'b30_fr1_{specifc_name}', value=mhb_all_fr1_checked(mhb_all_fr1_state))
+                'N30', key=f'b30_fr1_{specifc_name}', value=st.session_state[f'mhb_all_fr1_{specifc_name}'])
             b25_fr1_state = col2_mhb_fr1.checkbox(
-                'N25', key=f'b25_fr1_{specifc_name}', value=mhb_all_fr1_checked(mhb_all_fr1_state))
+                'N25', key=f'b25_fr1_{specifc_name}', value=st.session_state[f'mhb_all_fr1_{specifc_name}'])
             b66_fr1_state = col2_mhb_fr1.checkbox(
-                'N66', key=f'b66_fr1_{specifc_name}', value=mhb_all_fr1_checked(mhb_all_fr1_state))
+                'N66', key=f'b66_fr1_{specifc_name}', value=st.session_state[f'mhb_all_fr1_{specifc_name}'])
             b70_fr1_state = col2_mhb_fr1.checkbox(
-                'N70', key=f'b70_fr1_{specifc_name}', value=mhb_all_fr1_checked(mhb_all_fr1_state))
+                'N70', key=f'b70_fr1_{specifc_name}', value=st.session_state[f'mhb_all_fr1_{specifc_name}'])
             b40_fr1_state = col2_mhb_fr1.checkbox(
-                'N40', key=f'b40_fr1_{specifc_name}', value=mhb_all_fr1_checked(mhb_all_fr1_state))
+                'N40', key=f'b40_fr1_{specifc_name}', value=st.session_state[f'mhb_all_fr1_{specifc_name}'])
             b38_fr1_state = col2_mhb_fr1.checkbox(
-                'N38', key=f'b38_fr1_{specifc_name}', value=mhb_all_fr1_checked(mhb_all_fr1_state))
+                'N38', key=f'b38_fr1_{specifc_name}', value=st.session_state[f'mhb_all_fr1_{specifc_name}'])
             b41_fr1_state = col2_mhb_fr1.checkbox(
-                'N41', key=f'b41_fr1_{specifc_name}', value=mhb_all_fr1_checked(mhb_all_fr1_state))
+                'N41', key=f'b41_fr1_{specifc_name}', value=st.session_state[f'mhb_all_fr1_{specifc_name}'])
             b34_fr1_state = col2_mhb_fr1.checkbox(
-                'N34', key=f'b34_fr1_{specifc_name}', value=mhb_all_fr1_checked(mhb_all_fr1_state))
+                'N34', key=f'b34_fr1_{specifc_name}', value=st.session_state[f'mhb_all_fr1_{specifc_name}'])
             b75_fr1_state = col2_mhb_fr1.checkbox(
-                'N75', key=f'b75_fr1_{specifc_name}', value=mhb_all_fr1_checked(mhb_all_fr1_state))
+                'N75', key=f'b75_fr1_{specifc_name}', value=st.session_state[f'mhb_all_fr1_{specifc_name}'])
             b76_fr1_state = col2_mhb_fr1.checkbox(
-                'N76', key=f'b76_fr1_{specifc_name}', value=mhb_all_fr1_checked(mhb_all_fr1_state))
+                'N76', key=f'b76_fr1_{specifc_name}', value=st.session_state[f'mhb_all_fr1_{specifc_name}'])
             b255_fr1_state = col2_mhb_fr1.checkbox(
-                'N255', key=f'b255_fr1_{specifc_name}', value=mhb_all_fr1_checked(mhb_all_fr1_state))
+                'N255', key=f'b255_fr1_{specifc_name}', value=st.session_state[f'mhb_all_fr1_{specifc_name}'])
             b256_fr1_state = col2_mhb_fr1.checkbox(
-                'N256', key=f'b256_fr1_{specifc_name}', value=mhb_all_fr1_checked(mhb_all_fr1_state))
+                'N256', key=f'b256_fr1_{specifc_name}', value=st.session_state[f'mhb_all_fr1_{specifc_name}'])
 
         with col3_uhb:
             # container
@@ -458,13 +459,13 @@ def tabs():
             uhb_all_fr1_state = col3_uhb_fr1.checkbox(
                 'UHB_ALL', key=f'uhb_all_fr1_{specifc_name}')
             b48_fr1_state = col3_uhb_fr1.checkbox(
-                'N48', key=f'b48_fr1_{specifc_name}', value=uhb_all_fr1_checked(uhb_all_fr1_state))
+                'N48', key=f'b48_fr1_{specifc_name}', value=st.session_state[f'uhb_all_fr1_{specifc_name}'])
             b77_fr1_state = col3_uhb_fr1.checkbox(
-                'N77', key=f'b77_fr1_{specifc_name}', value=uhb_all_fr1_checked(uhb_all_fr1_state))
+                'N77', key=f'b77_fr1_{specifc_name}', value=st.session_state[f'uhb_all_fr1_{specifc_name}'])
             b78_fr1_state = col3_uhb_fr1.checkbox(
-                'N78', key=f'b78_fr1_{specifc_name}', value=uhb_all_fr1_checked(uhb_all_fr1_state))
+                'N78', key=f'b78_fr1_{specifc_name}', value=st.session_state[f'uhb_all_fr1_{specifc_name}'])
             b79_fr1_state = col3_uhb_fr1.checkbox(
-                'N79', key=f'b79_fr1_{specifc_name}', value=uhb_all_fr1_checked(uhb_all_fr1_state))
+                'N79', key=f'b79_fr1_{specifc_name}', value=st.session_state[f'uhb_all_fr1_{specifc_name}'])
 
         # horizontal divider
         st.divider()
@@ -550,37 +551,37 @@ def tabs():
             lb_all_lte_state = col1_lb_lte.checkbox(
                 'LB_ALL', key=f'lb_all_lte_{specifc_name}')
             b5_lte_state = col1_lb_lte.checkbox(
-                'L5', key=f'b5_lte_{specifc_name}', value=lb_all_lte_checked(lb_all_lte_state))
+                'L5', key=f'b5_lte_{specifc_name}', value=st.session_state[f'lb_all_lte_{specifc_name}'])
             b8_lte_state = col1_lb_lte.checkbox(
-                'L8', key=f'b8_lte_{specifc_name}', value=lb_all_lte_checked(lb_all_lte_state))
+                'L8', key=f'b8_lte_{specifc_name}', value=st.session_state[f'lb_all_lte_{specifc_name}'])
             b12_lte_state = col1_lb_lte.checkbox(
-                'L12', key=f'b12_lte_{specifc_name}', value=lb_all_lte_checked(lb_all_lte_state))
+                'L12', key=f'b12_lte_{specifc_name}', value=st.session_state[f'lb_all_lte_{specifc_name}'])
             b13_lte_state = col1_lb_lte.checkbox(
-                'L13', key=f'b13_lte_{specifc_name}', value=lb_all_lte_checked(lb_all_lte_state))
+                'L13', key=f'b13_lte_{specifc_name}', value=st.session_state[f'lb_all_lte_{specifc_name}'])
             b14_lte_state = col1_lb_lte.checkbox(
-                'L14', key=f'b14_lte_{specifc_name}', value=lb_all_lte_checked(lb_all_lte_state))
+                'L14', key=f'b14_lte_{specifc_name}', value=st.session_state[f'lb_all_lte_{specifc_name}'])
             b17_lte_state = col1_lb_lte.checkbox(
-                'L17', key=f'b17_lte_{specifc_name}', value=lb_all_lte_checked(lb_all_lte_state))
+                'L17', key=f'b17_lte_{specifc_name}', value=st.session_state[f'lb_all_lte_{specifc_name}'])
             b18_lte_state = col1_lb_lte.checkbox(
-                'L18', key=f'b18_lte_{specifc_name}', value=lb_all_lte_checked(lb_all_lte_state))
+                'L18', key=f'b18_lte_{specifc_name}', value=st.session_state[f'lb_all_lte_{specifc_name}'])
             b19_lte_state = col1_lb_lte.checkbox(
-                'L19', key=f'b19_lte_{specifc_name}', value=lb_all_lte_checked(lb_all_lte_state))
+                'L19', key=f'b19_lte_{specifc_name}', value=st.session_state[f'lb_all_lte_{specifc_name}'])
             b20_lte_state = col1_lb_lte.checkbox(
-                'L20', key=f'b20_lte_{specifc_name}', value=lb_all_lte_checked(lb_all_lte_state))
+                'L20', key=f'b20_lte_{specifc_name}', value=st.session_state[f'lb_all_lte_{specifc_name}'])
             b24_lte_state = col1_lb_lte.checkbox(
-                'L24', key=f'b24_lte_{specifc_name}', value=lb_all_lte_checked(lb_all_lte_state))
+                'L24', key=f'b24_lte_{specifc_name}', value=st.session_state[f'lb_all_lte_{specifc_name}'])
             b26_lte_state = col1_lb_lte.checkbox(
-                'L26', key=f'b26_lte_{specifc_name}', value=lb_all_lte_checked(lb_all_lte_state))
+                'L26', key=f'b26_lte_{specifc_name}', value=st.session_state[f'lb_all_lte_{specifc_name}'])
             b28a_lte_state = col1_lb_lte.checkbox(
-                'L28A', key=f'b28a_lte_{specifc_name}', value=lb_all_lte_checked(lb_all_lte_state))
+                'L28A', key=f'b28a_lte_{specifc_name}', value=st.session_state[f'lb_all_lte_{specifc_name}'])
             b28b_lte_state = col1_lb_lte.checkbox(
-                'L28B', key=f'b28b_lte_{specifc_name}', value=lb_all_lte_checked(lb_all_lte_state))
+                'L28B', key=f'b28b_lte_{specifc_name}', value=st.session_state[f'lb_all_lte_{specifc_name}'])
             b29_lte_state = col1_lb_lte.checkbox(
-                'L29', key=f'b29_lte_{specifc_name}', value=lb_all_lte_checked(lb_all_lte_state))
+                'L29', key=f'b29_lte_{specifc_name}', value=st.session_state[f'lb_all_lte_{specifc_name}'])
             b32_lte_state = col1_lb_lte.checkbox(
-                'L32', key=f'b32_lte_{specifc_name}', value=lb_all_lte_checked(lb_all_lte_state))
+                'L32', key=f'b32_lte_{specifc_name}', value=st.session_state[f'lb_all_lte_{specifc_name}'])
             b71_lte_state = col1_lb_lte.checkbox(
-                'L71', key=f'b71_lte_{specifc_name}', value=lb_all_lte_checked(lb_all_lte_state))
+                'L71', key=f'b71_lte_{specifc_name}', value=st.session_state[f'lb_all_lte_{specifc_name}'])
 
         with col2_mhb:
             # container
@@ -593,37 +594,37 @@ def tabs():
             mhb_all_lte_state = col2_mhb_lte.checkbox(
                 'MHB_ALL', key=f'mhb_all_lte_{specifc_name}')
             b1_lte_state = col2_mhb_lte.checkbox(
-                'L1', key=f'b1_lte_{specifc_name}', value=mhb_all_lte_checked(mhb_all_lte_state))
+                'L1', key=f'b1_lte_{specifc_name}', value=st.session_state[f'mhb_all_lte_{specifc_name}'])
             b2_lte_state = col2_mhb_lte.checkbox(
-                'L2', key=f'b2_lte_{specifc_name}', value=mhb_all_lte_checked(mhb_all_lte_state))
+                'L2', key=f'b2_lte_{specifc_name}', value=st.session_state[f'mhb_all_lte_{specifc_name}'])
             b3_lte_state = col2_mhb_lte.checkbox(
-                'L3', key=f'b3_lte_{specifc_name}', value=mhb_all_lte_checked(mhb_all_lte_state))
+                'L3', key=f'b3_lte_{specifc_name}', value=st.session_state[f'mhb_all_lte_{specifc_name}'])
             b7_lte_state = col2_mhb_lte.checkbox(
-                'L7', key=f'b7_lte_{specifc_name}', value=mhb_all_lte_checked(mhb_all_lte_state))
+                'L7', key=f'b7_lte_{specifc_name}', value=st.session_state[f'mhb_all_lte_{specifc_name}'])
             b30_lte_state = col2_mhb_lte.checkbox(
-                'L30', key=f'b30_lte_{specifc_name}', value=mhb_all_lte_checked(mhb_all_lte_state))
+                'L30', key=f'b30_lte_{specifc_name}', value=st.session_state[f'mhb_all_lte_{specifc_name}'])
             b25_lte_state = col2_mhb_lte.checkbox(
-                'L25', key=f'b25_lte_{specifc_name}', value=mhb_all_lte_checked(mhb_all_lte_state))
+                'L25', key=f'b25_lte_{specifc_name}', value=st.session_state[f'mhb_all_lte_{specifc_name}'])
             b66_lte_state = col2_mhb_lte.checkbox(
-                'L66', key=f'b66_lte_{specifc_name}', value=mhb_all_lte_checked(mhb_all_lte_state))
+                'L66', key=f'b66_lte_{specifc_name}', value=st.session_state[f'mhb_all_lte_{specifc_name}'])
             b70_lte_state = col2_mhb_lte.checkbox(
-                'L70', key=f'b70_lte_{specifc_name}', value=mhb_all_lte_checked(mhb_all_lte_state))
+                'L70', key=f'b70_lte_{specifc_name}', value=st.session_state[f'mhb_all_lte_{specifc_name}'])
             b39_lte_state = col2_mhb_lte.checkbox(
-                'L39', key=f'b39_lte_{specifc_name}', value=mhb_all_lte_checked(mhb_all_lte_state))
+                'L39', key=f'b39_lte_{specifc_name}', value=st.session_state[f'mhb_all_lte_{specifc_name}'])
             b40_lte_state = col2_mhb_lte.checkbox(
-                'L40', key=f'b40_lte_{specifc_name}', value=mhb_all_lte_checked(mhb_all_lte_state))
+                'L40', key=f'b40_lte_{specifc_name}', value=st.session_state[f'mhb_all_lte_{specifc_name}'])
             b38_lte_state = col2_mhb_lte.checkbox(
-                'L38', key=f'b38_lte_{specifc_name}', value=mhb_all_lte_checked(mhb_all_lte_state))
+                'L38', key=f'b38_lte_{specifc_name}', value=st.session_state[f'mhb_all_lte_{specifc_name}'])
             b41_lte_state = col2_mhb_lte.checkbox(
-                'L41', key=f'b41_lte_{specifc_name}', value=mhb_all_lte_checked(mhb_all_lte_state))
+                'L41', key=f'b41_lte_{specifc_name}', value=st.session_state[f'mhb_all_lte_{specifc_name}'])
             b23_lte_state = col2_mhb_lte.checkbox(
-                'L23', key=f'b23_lte_{specifc_name}', value=mhb_all_lte_checked(mhb_all_lte_state))
+                'L23', key=f'b23_lte_{specifc_name}', value=st.session_state[f'mhb_all_lte_{specifc_name}'])
             b34_lte_state = col2_mhb_lte.checkbox(
-                'L34', key=f'b34_lte_{specifc_name}', value=mhb_all_lte_checked(mhb_all_lte_state))
+                'L34', key=f'b34_lte_{specifc_name}', value=st.session_state[f'mhb_all_lte_{specifc_name}'])
             b75_lte_state = col2_mhb_lte.checkbox(
-                'L75', key=f'b75_lte_{specifc_name}', value=mhb_all_lte_checked(mhb_all_lte_state))
+                'L75', key=f'b75_lte_{specifc_name}', value=st.session_state[f'mhb_all_lte_{specifc_name}'])
             b76_lte_state = col2_mhb_lte.checkbox(
-                'L76', key=f'b76_lte_{specifc_name}', value=mhb_all_lte_checked(mhb_all_lte_state))
+                'L76', key=f'b76_lte_{specifc_name}', value=st.session_state[f'mhb_all_lte_{specifc_name}'])
 
         with col3_uhb:
             # container
@@ -636,9 +637,9 @@ def tabs():
             uhb_all_lte_state = col3_uhb_lte.checkbox(
                 'UHB_ALL', key=f'uhb_all_lte_{specifc_name}')
             b42_lte_state = col3_uhb_lte.checkbox(
-                'L42', key=f'b42_lte_{specifc_name}', value=uhb_all_lte_checked(uhb_all_lte_state))
+                'L42', key=f'b42_lte_{specifc_name}', value=st.session_state[f'uhb_all_lte_{specifc_name}'])
             b48_lte_state = col3_uhb_lte.checkbox(
-                'L48', key=f'b48_lte_{specifc_name}', value=uhb_all_lte_checked(uhb_all_lte_state))
+                'L48', key=f'b48_lte_{specifc_name}', value=st.session_state[f'uhb_all_lte_{specifc_name}'])
 
     with fcc_tab:
         # specify key name in this page and tab
@@ -972,31 +973,31 @@ def tabs():
             lb_all_fr1_state = col1_lb_fr1.checkbox(
                 'LB_ALL', key=f'lb_all_fr1_{specifc_name}')
             b5_fr1_state = col1_lb_fr1.checkbox(
-                'N5', key=f'b5_fr1_{specifc_name}', value=lb_all_fr1_checked(lb_all_fr1_state))
+                'N5', key=f'b5_fr1_{specifc_name}', value=st.session_state[f'lb_all_fr1_{specifc_name}'])
             b8_fr1_state = col1_lb_fr1.checkbox(
-                'N8', key=f'b8_fr1_{specifc_name}', value=lb_all_fr1_checked(lb_all_fr1_state))
+                'N8', key=f'b8_fr1_{specifc_name}', value=st.session_state[f'lb_all_fr1_{specifc_name}'])
             b12_fr1_state = col1_lb_fr1.checkbox(
-                'N12', key=f'b12_fr1_{specifc_name}', value=lb_all_fr1_checked(lb_all_fr1_state))
+                'N12', key=f'b12_fr1_{specifc_name}', value=st.session_state[f'lb_all_fr1_{specifc_name}'])
             b13_fr1_state = col1_lb_fr1.checkbox(
-                'N13', key=f'b13_fr1_{specifc_name}', value=lb_all_fr1_checked(lb_all_fr1_state))
+                'N13', key=f'b13_fr1_{specifc_name}', value=st.session_state[f'lb_all_fr1_{specifc_name}'])
             b14_fr1_state = col1_lb_fr1.checkbox(
-                'N14', key=f'b14_fr1_{specifc_name}', value=lb_all_fr1_checked(lb_all_fr1_state))
+                'N14', key=f'b14_fr1_{specifc_name}', value=st.session_state[f'lb_all_fr1_{specifc_name}'])
             b20_fr1_state = col1_lb_fr1.checkbox(
-                'N20', key=f'b20_fr1_{specifc_name}', value=lb_all_fr1_checked(lb_all_fr1_state))
+                'N20', key=f'b20_fr1_{specifc_name}', value=st.session_state[f'lb_all_fr1_{specifc_name}'])
             b24_fr1_state = col1_lb_fr1.checkbox(
-                'N24', key=f'b24_fr1_{specifc_name}', value=lb_all_fr1_checked(lb_all_fr1_state))
+                'N24', key=f'b24_fr1_{specifc_name}', value=st.session_state[f'lb_all_fr1_{specifc_name}'])
             b26_fr1_state = col1_lb_fr1.checkbox(
-                'N26', key=f'b26_fr1_{specifc_name}', value=lb_all_fr1_checked(lb_all_fr1_state))
+                'N26', key=f'b26_fr1_{specifc_name}', value=st.session_state[f'lb_all_fr1_{specifc_name}'])
             b28a_fr1_state = col1_lb_fr1.checkbox(
-                'N28A', key=f'b28a_fr1_{specifc_name}', value=lb_all_fr1_checked(lb_all_fr1_state))
+                'N28A', key=f'b28a_fr1_{specifc_name}', value=st.session_state[f'lb_all_fr1_{specifc_name}'])
             b28b_fr1_state = col1_lb_fr1.checkbox(
-                'N28B', key=f'b28b_fr1_{specifc_name}', value=lb_all_fr1_checked(lb_all_fr1_state))
+                'N28B', key=f'b28b_fr1_{specifc_name}', value=st.session_state[f'lb_all_fr1_{specifc_name}'])
             b29_fr1_state = col1_lb_fr1.checkbox(
-                'N29', key=f'b29_fr1_{specifc_name}', value=lb_all_fr1_checked(lb_all_fr1_state))
+                'N29', key=f'b29_fr1_{specifc_name}', value=st.session_state[f'lb_all_fr1_{specifc_name}'])
             b32_fr1_state = col1_lb_fr1.checkbox(
-                'N32', key=f'b32_fr1_{specifc_name}', value=lb_all_fr1_checked(lb_all_fr1_state))
+                'N32', key=f'b32_fr1_{specifc_name}', value=st.session_state[f'lb_all_fr1_{specifc_name}'])
             b71_fr1_state = col1_lb_fr1.checkbox(
-                'N71', key=f'b71_fr1_{specifc_name}', value=lb_all_fr1_checked(lb_all_fr1_state))
+                'N71', key=f'b71_fr1_{specifc_name}', value=st.session_state[f'lb_all_fr1_{specifc_name}'])
 
         with col2_mhb:
             # container
@@ -1009,37 +1010,37 @@ def tabs():
             mhb_all_fr1_state = col2_mhb_fr1.checkbox(
                 'MHB_ALL', key=f'mhb_all_fr1_{specifc_name}')
             b1_fr1_state = col2_mhb_fr1.checkbox(
-                'N1', key=f'b1_fr1_{specifc_name}', value=mhb_all_fr1_checked(mhb_all_fr1_state))
+                'N1', key=f'b1_fr1_{specifc_name}', value=st.session_state[f'mhb_all_fr1_{specifc_name}'])
             b2_fr1_state = col2_mhb_fr1.checkbox(
-                'N2', key=f'b2_fr1_{specifc_name}', value=mhb_all_fr1_checked(mhb_all_fr1_state))
+                'N2', key=f'b2_fr1_{specifc_name}', value=st.session_state[f'mhb_all_fr1_{specifc_name}'])
             b3_fr1_state = col2_mhb_fr1.checkbox(
-                'N3', key=f'b3_fr1_{specifc_name}', value=mhb_all_fr1_checked(mhb_all_fr1_state))
+                'N3', key=f'b3_fr1_{specifc_name}', value=st.session_state[f'mhb_all_fr1_{specifc_name}'])
             b7_fr1_state = col2_mhb_fr1.checkbox(
-                'N7', key=f'b7_fr1_{specifc_name}', value=mhb_all_fr1_checked(mhb_all_fr1_state))
+                'N7', key=f'b7_fr1_{specifc_name}', value=st.session_state[f'mhb_all_fr1_{specifc_name}'])
             b30_fr1_state = col2_mhb_fr1.checkbox(
-                'N30', key=f'b30_fr1_{specifc_name}', value=mhb_all_fr1_checked(mhb_all_fr1_state))
+                'N30', key=f'b30_fr1_{specifc_name}', value=st.session_state[f'mhb_all_fr1_{specifc_name}'])
             b25_fr1_state = col2_mhb_fr1.checkbox(
-                'N25', key=f'b25_fr1_{specifc_name}', value=mhb_all_fr1_checked(mhb_all_fr1_state))
+                'N25', key=f'b25_fr1_{specifc_name}', value=st.session_state[f'mhb_all_fr1_{specifc_name}'])
             b66_fr1_state = col2_mhb_fr1.checkbox(
-                'N66', key=f'b66_fr1_{specifc_name}', value=mhb_all_fr1_checked(mhb_all_fr1_state))
+                'N66', key=f'b66_fr1_{specifc_name}', value=st.session_state[f'mhb_all_fr1_{specifc_name}'])
             b70_fr1_state = col2_mhb_fr1.checkbox(
-                'N70', key=f'b70_fr1_{specifc_name}', value=mhb_all_fr1_checked(mhb_all_fr1_state))
+                'N70', key=f'b70_fr1_{specifc_name}', value=st.session_state[f'mhb_all_fr1_{specifc_name}'])
             b40_fr1_state = col2_mhb_fr1.checkbox(
-                'N40', key=f'b40_fr1_{specifc_name}', value=mhb_all_fr1_checked(mhb_all_fr1_state))
+                'N40', key=f'b40_fr1_{specifc_name}', value=st.session_state[f'mhb_all_fr1_{specifc_name}'])
             b38_fr1_state = col2_mhb_fr1.checkbox(
-                'N38', key=f'b38_fr1_{specifc_name}', value=mhb_all_fr1_checked(mhb_all_fr1_state))
+                'N38', key=f'b38_fr1_{specifc_name}', value=st.session_state[f'mhb_all_fr1_{specifc_name}'])
             b41_fr1_state = col2_mhb_fr1.checkbox(
-                'N41', key=f'b41_fr1_{specifc_name}', value=mhb_all_fr1_checked(mhb_all_fr1_state))
+                'N41', key=f'b41_fr1_{specifc_name}', value=st.session_state[f'mhb_all_fr1_{specifc_name}'])
             b34_fr1_state = col2_mhb_fr1.checkbox(
-                'N34', key=f'b34_fr1_{specifc_name}', value=mhb_all_fr1_checked(mhb_all_fr1_state))
+                'N34', key=f'b34_fr1_{specifc_name}', value=st.session_state[f'mhb_all_fr1_{specifc_name}'])
             b75_fr1_state = col2_mhb_fr1.checkbox(
-                'N75', key=f'b75_fr1_{specifc_name}', value=mhb_all_fr1_checked(mhb_all_fr1_state))
+                'N75', key=f'b75_fr1_{specifc_name}', value=st.session_state[f'mhb_all_fr1_{specifc_name}'])
             b76_fr1_state = col2_mhb_fr1.checkbox(
-                'N76', key=f'b76_fr1_{specifc_name}', value=mhb_all_fr1_checked(mhb_all_fr1_state))
+                'N76', key=f'b76_fr1_{specifc_name}', value=st.session_state[f'mhb_all_fr1_{specifc_name}'])
             b255_fr1_state = col2_mhb_fr1.checkbox(
-                'N255', key=f'b255_fr1_{specifc_name}', value=mhb_all_fr1_checked(mhb_all_fr1_state))
+                'N255', key=f'b255_fr1_{specifc_name}', value=st.session_state[f'mhb_all_fr1_{specifc_name}'])
             b256_fr1_state = col2_mhb_fr1.checkbox(
-                'N256', key=f'b256_fr1_{specifc_name}', value=mhb_all_fr1_checked(mhb_all_fr1_state))
+                'N256', key=f'b256_fr1_{specifc_name}', value=st.session_state[f'mhb_all_fr1_{specifc_name}'])
 
         with col3_uhb:
             # container
@@ -1052,13 +1053,13 @@ def tabs():
             uhb_all_fr1_state = col3_uhb_fr1.checkbox(
                 'UHB_ALL', key=f'uhb_all_fr1_{specifc_name}')
             b48_fr1_state = col3_uhb_fr1.checkbox(
-                'N48', key=f'b48_fr1_{specifc_name}', value=uhb_all_fr1_checked(uhb_all_fr1_state))
+                'N48', key=f'b48_fr1_{specifc_name}', value=st.session_state[f'uhb_all_fr1_{specifc_name}'])
             b77_fr1_state = col3_uhb_fr1.checkbox(
-                'N77', key=f'b77_fr1_{specifc_name}', value=uhb_all_fr1_checked(uhb_all_fr1_state))
+                'N77', key=f'b77_fr1_{specifc_name}', value=st.session_state[f'uhb_all_fr1_{specifc_name}'])
             b78_fr1_state = col3_uhb_fr1.checkbox(
-                'N78', key=f'b78_fr1_{specifc_name}', value=uhb_all_fr1_checked(uhb_all_fr1_state))
+                'N78', key=f'b78_fr1_{specifc_name}', value=st.session_state[f'uhb_all_fr1_{specifc_name}'])
             b79_fr1_state = col3_uhb_fr1.checkbox(
-                'N79', key=f'b79_fr1_{specifc_name}', value=uhb_all_fr1_checked(uhb_all_fr1_state))
+                'N79', key=f'b79_fr1_{specifc_name}', value=st.session_state[f'uhb_all_fr1_{specifc_name}'])
 
     with ce_tab:
         # specify key name in this page and tab
@@ -1392,31 +1393,31 @@ def tabs():
             lb_all_fr1_state = col1_lb_fr1.checkbox(
                 'LB_ALL', key=f'lb_all_fr1_{specifc_name}')
             b5_fr1_state = col1_lb_fr1.checkbox(
-                'N5', key=f'b5_fr1_{specifc_name}', value=lb_all_fr1_checked(lb_all_fr1_state))
+                'N5', key=f'b5_fr1_{specifc_name}', value=st.session_state[f'lb_all_fr1_{specifc_name}'])
             b8_fr1_state = col1_lb_fr1.checkbox(
-                'N8', key=f'b8_fr1_{specifc_name}', value=lb_all_fr1_checked(lb_all_fr1_state))
+                'N8', key=f'b8_fr1_{specifc_name}', value=st.session_state[f'lb_all_fr1_{specifc_name}'])
             b12_fr1_state = col1_lb_fr1.checkbox(
-                'N12', key=f'b12_fr1_{specifc_name}', value=lb_all_fr1_checked(lb_all_fr1_state))
+                'N12', key=f'b12_fr1_{specifc_name}', value=st.session_state[f'lb_all_fr1_{specifc_name}'])
             b13_fr1_state = col1_lb_fr1.checkbox(
-                'N13', key=f'b13_fr1_{specifc_name}', value=lb_all_fr1_checked(lb_all_fr1_state))
+                'N13', key=f'b13_fr1_{specifc_name}', value=st.session_state[f'lb_all_fr1_{specifc_name}'])
             b14_fr1_state = col1_lb_fr1.checkbox(
-                'N14', key=f'b14_fr1_{specifc_name}', value=lb_all_fr1_checked(lb_all_fr1_state))
+                'N14', key=f'b14_fr1_{specifc_name}', value=st.session_state[f'lb_all_fr1_{specifc_name}'])
             b20_fr1_state = col1_lb_fr1.checkbox(
-                'N20', key=f'b20_fr1_{specifc_name}', value=lb_all_fr1_checked(lb_all_fr1_state))
+                'N20', key=f'b20_fr1_{specifc_name}', value=st.session_state[f'lb_all_fr1_{specifc_name}'])
             b24_fr1_state = col1_lb_fr1.checkbox(
-                'N24', key=f'b24_fr1_{specifc_name}', value=lb_all_fr1_checked(lb_all_fr1_state))
+                'N24', key=f'b24_fr1_{specifc_name}', value=st.session_state[f'lb_all_fr1_{specifc_name}'])
             b26_fr1_state = col1_lb_fr1.checkbox(
-                'N26', key=f'b26_fr1_{specifc_name}', value=lb_all_fr1_checked(lb_all_fr1_state))
+                'N26', key=f'b26_fr1_{specifc_name}', value=st.session_state[f'lb_all_fr1_{specifc_name}'])
             b28a_fr1_state = col1_lb_fr1.checkbox(
-                'N28A', key=f'b28a_fr1_{specifc_name}', value=lb_all_fr1_checked(lb_all_fr1_state))
+                'N28A', key=f'b28a_fr1_{specifc_name}', value=st.session_state[f'lb_all_fr1_{specifc_name}'])
             b28b_fr1_state = col1_lb_fr1.checkbox(
-                'N28B', key=f'b28b_fr1_{specifc_name}', value=lb_all_fr1_checked(lb_all_fr1_state))
+                'N28B', key=f'b28b_fr1_{specifc_name}', value=st.session_state[f'lb_all_fr1_{specifc_name}'])
             b29_fr1_state = col1_lb_fr1.checkbox(
-                'N29', key=f'b29_fr1_{specifc_name}', value=lb_all_fr1_checked(lb_all_fr1_state))
+                'N29', key=f'b29_fr1_{specifc_name}', value=st.session_state[f'lb_all_fr1_{specifc_name}'])
             b32_fr1_state = col1_lb_fr1.checkbox(
-                'N32', key=f'b32_fr1_{specifc_name}', value=lb_all_fr1_checked(lb_all_fr1_state))
+                'N32', key=f'b32_fr1_{specifc_name}', value=st.session_state[f'lb_all_fr1_{specifc_name}'])
             b71_fr1_state = col1_lb_fr1.checkbox(
-                'N71', key=f'b71_fr1_{specifc_name}', value=lb_all_fr1_checked(lb_all_fr1_state))
+                'N71', key=f'b71_fr1_{specifc_name}', value=st.session_state[f'lb_all_fr1_{specifc_name}'])
 
         with col2_mhb:
             # container
@@ -1429,37 +1430,37 @@ def tabs():
             mhb_all_fr1_state = col2_mhb_fr1.checkbox(
                 'MHB_ALL', key=f'mhb_all_fr1_{specifc_name}')
             b1_fr1_state = col2_mhb_fr1.checkbox(
-                'N1', key=f'b1_fr1_{specifc_name}', value=mhb_all_fr1_checked(mhb_all_fr1_state))
+                'N1', key=f'b1_fr1_{specifc_name}', value=st.session_state[f'mhb_all_fr1_{specifc_name}'])
             b2_fr1_state = col2_mhb_fr1.checkbox(
-                'N2', key=f'b2_fr1_{specifc_name}', value=mhb_all_fr1_checked(mhb_all_fr1_state))
+                'N2', key=f'b2_fr1_{specifc_name}', value=st.session_state[f'mhb_all_fr1_{specifc_name}'])
             b3_fr1_state = col2_mhb_fr1.checkbox(
-                'N3', key=f'b3_fr1_{specifc_name}', value=mhb_all_fr1_checked(mhb_all_fr1_state))
+                'N3', key=f'b3_fr1_{specifc_name}', value=st.session_state[f'mhb_all_fr1_{specifc_name}'])
             b7_fr1_state = col2_mhb_fr1.checkbox(
-                'N7', key=f'b7_fr1_{specifc_name}', value=mhb_all_fr1_checked(mhb_all_fr1_state))
+                'N7', key=f'b7_fr1_{specifc_name}', value=st.session_state[f'mhb_all_fr1_{specifc_name}'])
             b30_fr1_state = col2_mhb_fr1.checkbox(
-                'N30', key=f'b30_fr1_{specifc_name}', value=mhb_all_fr1_checked(mhb_all_fr1_state))
+                'N30', key=f'b30_fr1_{specifc_name}', value=st.session_state[f'mhb_all_fr1_{specifc_name}'])
             b25_fr1_state = col2_mhb_fr1.checkbox(
-                'N25', key=f'b25_fr1_{specifc_name}', value=mhb_all_fr1_checked(mhb_all_fr1_state))
+                'N25', key=f'b25_fr1_{specifc_name}', value=st.session_state[f'mhb_all_fr1_{specifc_name}'])
             b66_fr1_state = col2_mhb_fr1.checkbox(
-                'N66', key=f'b66_fr1_{specifc_name}', value=mhb_all_fr1_checked(mhb_all_fr1_state))
+                'N66', key=f'b66_fr1_{specifc_name}', value=st.session_state[f'mhb_all_fr1_{specifc_name}'])
             b70_fr1_state = col2_mhb_fr1.checkbox(
-                'N70', key=f'b70_fr1_{specifc_name}', value=mhb_all_fr1_checked(mhb_all_fr1_state))
+                'N70', key=f'b70_fr1_{specifc_name}', value=st.session_state[f'mhb_all_fr1_{specifc_name}'])
             b40_fr1_state = col2_mhb_fr1.checkbox(
-                'N40', key=f'b40_fr1_{specifc_name}', value=mhb_all_fr1_checked(mhb_all_fr1_state))
+                'N40', key=f'b40_fr1_{specifc_name}', value=st.session_state[f'mhb_all_fr1_{specifc_name}'])
             b38_fr1_state = col2_mhb_fr1.checkbox(
-                'N38', key=f'b38_fr1_{specifc_name}', value=mhb_all_fr1_checked(mhb_all_fr1_state))
+                'N38', key=f'b38_fr1_{specifc_name}', value=st.session_state[f'mhb_all_fr1_{specifc_name}'])
             b41_fr1_state = col2_mhb_fr1.checkbox(
-                'N41', key=f'b41_fr1_{specifc_name}', value=mhb_all_fr1_checked(mhb_all_fr1_state))
+                'N41', key=f'b41_fr1_{specifc_name}', value=st.session_state[f'mhb_all_fr1_{specifc_name}'])
             b34_fr1_state = col2_mhb_fr1.checkbox(
-                'N34', key=f'b34_fr1_{specifc_name}', value=mhb_all_fr1_checked(mhb_all_fr1_state))
+                'N34', key=f'b34_fr1_{specifc_name}', value=st.session_state[f'mhb_all_fr1_{specifc_name}'])
             b75_fr1_state = col2_mhb_fr1.checkbox(
-                'N75', key=f'b75_fr1_{specifc_name}', value=mhb_all_fr1_checked(mhb_all_fr1_state))
+                'N75', key=f'b75_fr1_{specifc_name}', value=st.session_state[f'mhb_all_fr1_{specifc_name}'])
             b76_fr1_state = col2_mhb_fr1.checkbox(
-                'N76', key=f'b76_fr1_{specifc_name}', value=mhb_all_fr1_checked(mhb_all_fr1_state))
+                'N76', key=f'b76_fr1_{specifc_name}', value=st.session_state[f'mhb_all_fr1_{specifc_name}'])
             b255_fr1_state = col2_mhb_fr1.checkbox(
-                'N255', key=f'b255_fr1_{specifc_name}', value=mhb_all_fr1_checked(mhb_all_fr1_state))
+                'N255', key=f'b255_fr1_{specifc_name}', value=st.session_state[f'mhb_all_fr1_{specifc_name}'])
             b256_fr1_state = col2_mhb_fr1.checkbox(
-                'N256', key=f'b256_fr1_{specifc_name}', value=mhb_all_fr1_checked(mhb_all_fr1_state))
+                'N256', key=f'b256_fr1_{specifc_name}', value=st.session_state[f'mhb_all_fr1_{specifc_name}'])
 
         with col3_uhb:
             # container
@@ -1472,13 +1473,13 @@ def tabs():
             uhb_all_fr1_state = col3_uhb_fr1.checkbox(
                 'UHB_ALL', key=f'uhb_all_fr1_{specifc_name}')
             b48_fr1_state = col3_uhb_fr1.checkbox(
-                'N48', key=f'b48_fr1_{specifc_name}', value=uhb_all_fr1_checked(uhb_all_fr1_state))
+                'N48', key=f'b48_fr1_{specifc_name}', value=st.session_state[f'uhb_all_fr1_{specifc_name}'])
             b77_fr1_state = col3_uhb_fr1.checkbox(
-                'N77', key=f'b77_fr1_{specifc_name}', value=uhb_all_fr1_checked(uhb_all_fr1_state))
+                'N77', key=f'b77_fr1_{specifc_name}', value=st.session_state[f'uhb_all_fr1_{specifc_name}'])
             b78_fr1_state = col3_uhb_fr1.checkbox(
-                'N78', key=f'b78_fr1_{specifc_name}', value=uhb_all_fr1_checked(uhb_all_fr1_state))
+                'N78', key=f'b78_fr1_{specifc_name}', value=st.session_state[f'uhb_all_fr1_{specifc_name}'])
             b79_fr1_state = col3_uhb_fr1.checkbox(
-                'N79', key=f'b79_fr1_{specifc_name}', value=uhb_all_fr1_checked(uhb_all_fr1_state))
+                'N79', key=f'b79_fr1_{specifc_name}', value=st.session_state[f'uhb_all_fr1_{specifc_name}'])
 
     with endc_tab:
         pass
@@ -1683,35 +1684,35 @@ def tabs():
             bw_ulca_lte_all_state = col1_bw_lte.checkbox(
                 'BW ALL', key=f'bw_ulca_lte_{specifc_name}')
             bw20_5_lte_state = col1_bw_lte.checkbox(
-                '20+5', key=f'bw20_5_lte_{specifc_name}', value=bw_ulca_all_lte_checked(bw_ulca_lte_all_state))
+                '20+5', key=f'bw20_5_lte_{specifc_name}', value=st.session_state[f'bw_ulca_lte_{specifc_name}'])
             bw5_20_lte_state = col1_bw_lte.checkbox(
-                '5+20', key=f'bw5_20_lte_{specifc_name}', value=bw_ulca_all_lte_checked(bw_ulca_lte_all_state))
+                '5+20', key=f'bw5_20_lte_{specifc_name}', value=st.session_state[f'bw_ulca_lte_{specifc_name}'])
             bw20_10_lte_state = col1_bw_lte.checkbox(
-                '20+10', key=f'bw20_10_lte_{specifc_name}', value=bw_ulca_all_lte_checked(bw_ulca_lte_all_state))
+                '20+10', key=f'bw20_10_lte_{specifc_name}', value=st.session_state[f'bw_ulca_lte_{specifc_name}'])
             bw10_20_lte_state = col1_bw_lte.checkbox(
-                '10+20', key=f'bw10_20_lte_{specifc_name}', value=bw_ulca_all_lte_checked(bw_ulca_lte_all_state))
+                '10+20', key=f'bw10_20_lte_{specifc_name}', value=st.session_state[f'bw_ulca_lte_{specifc_name}'])
             bw20_15_lte_state = col1_bw_lte.checkbox(
-                '20+15', key=f'bw20_15_lte_{specifc_name}', value=bw_ulca_all_lte_checked(bw_ulca_lte_all_state))
+                '20+15', key=f'bw20_15_lte_{specifc_name}', value=st.session_state[f'bw_ulca_lte_{specifc_name}'])
             bw15_20_lte_state = col1_bw_lte.checkbox(
-                '15+20', key=f'bw15_20_lte_{specifc_name}', value=bw_ulca_all_lte_checked(bw_ulca_lte_all_state))
+                '15+20', key=f'bw15_20_lte_{specifc_name}', value=st.session_state[f'bw_ulca_lte_{specifc_name}'])
             bw20_20_lte_state = col1_bw_lte.checkbox(
-                '20+20', key=f'bw20_20_lte_{specifc_name}', value=bw_ulca_all_lte_checked(bw_ulca_lte_all_state))
+                '20+20', key=f'bw20_20_lte_{specifc_name}', value=st.session_state[f'bw_ulca_lte_{specifc_name}'])
             bw15_15_lte_state = col1_bw_lte.checkbox(
-                '15+15', key=f'bw15_15_lte_{specifc_name}', value=bw_ulca_all_lte_checked(bw_ulca_lte_all_state))
+                '15+15', key=f'bw15_15_lte_{specifc_name}', value=st.session_state[f'bw_ulca_lte_{specifc_name}'])
             bw15_10_lte_state = col1_bw_lte.checkbox(
-                '15+10', key=f'bw15_10_lte_{specifc_name}', value=bw_ulca_all_lte_checked(bw_ulca_lte_all_state))
+                '15+10', key=f'bw15_10_lte_{specifc_name}', value=st.session_state[f'bw_ulca_lte_{specifc_name}'])
             bw10_15_lte_state = col1_bw_lte.checkbox(
-                '10+15', key=f'bw10_15_lte_{specifc_name}', value=bw_ulca_all_lte_checked(bw_ulca_lte_all_state))
+                '10+15', key=f'bw10_15_lte_{specifc_name}', value=st.session_state[f'bw_ulca_lte_{specifc_name}'])
             bw5_10_lte_state = col1_bw_lte.checkbox(
-                '5+10', key=f'bw5_10_lte_{specifc_name}', value=bw_ulca_all_lte_checked(bw_ulca_lte_all_state))
+                '5+10', key=f'bw5_10_lte_{specifc_name}', value=st.session_state[f'bw_ulca_lte_{specifc_name}'])
             bw10_5_lte_state = col1_bw_lte.checkbox(
-                '10+5', key=f'bw10_5_lte_{specifc_name}', value=bw_ulca_all_lte_checked(bw_ulca_lte_all_state))
+                '10+5', key=f'bw10_5_lte_{specifc_name}', value=st.session_state[f'bw_ulca_lte_{specifc_name}'])
             bw10_10_lte_state = col1_bw_lte.checkbox(
-                '10+10', key=f'bw10_10_lte_{specifc_name}', value=bw_ulca_all_lte_checked(bw_ulca_lte_all_state))
+                '10+10', key=f'bw10_10_lte_{specifc_name}', value=st.session_state[f'bw_ulca_lte_{specifc_name}'])
             bw5_15_lte_state = col1_bw_lte.checkbox(
-                '5+15', key=f'bw5_15_lte_{specifc_name}', value=bw_ulca_all_lte_checked(bw_ulca_lte_all_state))
+                '5+15', key=f'bw5_15_lte_{specifc_name}', value=st.session_state[f'bw_ulca_lte_{specifc_name}'])
             bw15_5_lte_state = col1_bw_lte.checkbox(
-                '15+5', key=f'bw15_5_lte_{specifc_name}', value=bw_ulca_all_lte_checked(bw_ulca_lte_all_state))
+                '15+5', key=f'bw15_5_lte_{specifc_name}', value=st.session_state[f'bw_ulca_lte_{specifc_name}'])
             bw40_lte_state = col1_bw_lte.checkbox(
                 '40', key=f'bw40_lte_{specifc_name}', disabled=True)
 
@@ -1757,7 +1758,8 @@ def tabs():
             col3_rb_lte.divider()
 
             # option to select
-            criteria_ulca = col3_rb_lte.radio('Criteria', ('3GPP', 'FCC'), index=1)
+            criteria_ulca = col3_rb_lte.radio(
+                'Criteria', ('3GPP', 'FCC'), index=1)
 
         # horizontal divider
         lte_container.divider()
@@ -1787,21 +1789,21 @@ def tabs():
             mhb_ulca_all_lte_state = col2_mhb_lte.checkbox(
                 'MHB_ALL', key=f'mhb_all_lte_{specifc_name}')
             b1c_lte_state = col2_mhb_lte.checkbox(
-                'L1C', key=f'b1c_lte_{specifc_name}', value=mhb_ulca_all_lte_checked(mhb_ulca_all_lte_state))
+                'L1C', key=f'b1c_lte_{specifc_name}', value=st.session_state[f'mhb_all_lte_{specifc_name}'])
             b3c_lte_state = col2_mhb_lte.checkbox(
-                'L3C', key=f'b3c_lte_{specifc_name}', value=mhb_ulca_all_lte_checked(mhb_ulca_all_lte_state))
+                'L3C', key=f'b3c_lte_{specifc_name}', value=st.session_state[f'mhb_all_lte_{specifc_name}'])
             b7c_lte_state = col2_mhb_lte.checkbox(
-                'L7C', key=f'b7c_lte_{specifc_name}', value=mhb_ulca_all_lte_checked(mhb_ulca_all_lte_state))
+                'L7C', key=f'b7c_lte_{specifc_name}', value=st.session_state[f'mhb_all_lte_{specifc_name}'])
             b66b_lte_state = col2_mhb_lte.checkbox(
-                'L66B', key=f'b66b_lte_{specifc_name}', value=mhb_ulca_all_lte_checked(mhb_ulca_all_lte_state))
+                'L66B', key=f'b66b_lte_{specifc_name}', value=st.session_state[f'mhb_all_lte_{specifc_name}'])
             b66c_lte_state = col2_mhb_lte.checkbox(
-                'L66C', key=f'b66c_lte_{specifc_name}', value=mhb_ulca_all_lte_checked(mhb_ulca_all_lte_state))
+                'L66C', key=f'b66c_lte_{specifc_name}', value=st.session_state[f'mhb_all_lte_{specifc_name}'])
             b40c_lte_state = col2_mhb_lte.checkbox(
-                'L40C', key=f'b40c_lte_{specifc_name}', value=mhb_ulca_all_lte_checked(mhb_ulca_all_lte_state))
+                'L40C', key=f'b40c_lte_{specifc_name}', value=st.session_state[f'mhb_all_lte_{specifc_name}'])
             b38c_lte_state = col2_mhb_lte.checkbox(
-                'L38C', key=f'b38c_lte_{specifc_name}', value=mhb_ulca_all_lte_checked(mhb_ulca_all_lte_state))
+                'L38C', key=f'b38c_lte_{specifc_name}', value=st.session_state[f'mhb_all_lte_{specifc_name}'])
             b41c_lte_state = col2_mhb_lte.checkbox(
-                'L41C', key=f'b41c_lte_{specifc_name}', value=mhb_ulca_all_lte_checked(mhb_ulca_all_lte_state))
+                'L41C', key=f'b41c_lte_{specifc_name}', value=st.session_state[f'mhb_all_lte_{specifc_name}'])
 
         with col3_uhb:
             # container
@@ -2114,31 +2116,31 @@ def tabs():
             lb_all_fr1_state = col1_lb_fr1.checkbox(
                 'LB_ALL', key=f'lb_all_fr1_{specifc_name}')
             b5_fr1_state = col1_lb_fr1.checkbox(
-                'N5', key=f'b5_fr1_{specifc_name}', value=lb_all_fr1_checked(lb_all_fr1_state))
+                'N5', key=f'b5_fr1_{specifc_name}', value=st.session_state[f'lb_all_fr1_{specifc_name}'])
             b8_fr1_state = col1_lb_fr1.checkbox(
-                'N8', key=f'b8_fr1_{specifc_name}', value=lb_all_fr1_checked(lb_all_fr1_state))
+                'N8', key=f'b8_fr1_{specifc_name}', value=st.session_state[f'lb_all_fr1_{specifc_name}'])
             b12_fr1_state = col1_lb_fr1.checkbox(
-                'N12', key=f'b12_fr1_{specifc_name}', value=lb_all_fr1_checked(lb_all_fr1_state))
+                'N12', key=f'b12_fr1_{specifc_name}', value=st.session_state[f'lb_all_fr1_{specifc_name}'])
             b13_fr1_state = col1_lb_fr1.checkbox(
-                'N13', key=f'b13_fr1_{specifc_name}', value=lb_all_fr1_checked(lb_all_fr1_state))
+                'N13', key=f'b13_fr1_{specifc_name}', value=st.session_state[f'lb_all_fr1_{specifc_name}'])
             b14_fr1_state = col1_lb_fr1.checkbox(
-                'N14', key=f'b14_fr1_{specifc_name}', value=lb_all_fr1_checked(lb_all_fr1_state))
+                'N14', key=f'b14_fr1_{specifc_name}', value=st.session_state[f'lb_all_fr1_{specifc_name}'])
             b20_fr1_state = col1_lb_fr1.checkbox(
-                'N20', key=f'b20_fr1_{specifc_name}', value=lb_all_fr1_checked(lb_all_fr1_state))
+                'N20', key=f'b20_fr1_{specifc_name}', value=st.session_state[f'lb_all_fr1_{specifc_name}'])
             b24_fr1_state = col1_lb_fr1.checkbox(
-                'N24', key=f'b24_fr1_{specifc_name}', value=lb_all_fr1_checked(lb_all_fr1_state))
+                'N24', key=f'b24_fr1_{specifc_name}', value=st.session_state[f'lb_all_fr1_{specifc_name}'])
             b26_fr1_state = col1_lb_fr1.checkbox(
-                'N26', key=f'b26_fr1_{specifc_name}', value=lb_all_fr1_checked(lb_all_fr1_state))
+                'N26', key=f'b26_fr1_{specifc_name}', value=st.session_state[f'lb_all_fr1_{specifc_name}'])
             b28a_fr1_state = col1_lb_fr1.checkbox(
-                'N28A', key=f'b28a_fr1_{specifc_name}', value=lb_all_fr1_checked(lb_all_fr1_state))
+                'N28A', key=f'b28a_fr1_{specifc_name}', value=st.session_state[f'lb_all_fr1_{specifc_name}'])
             b28b_fr1_state = col1_lb_fr1.checkbox(
-                'N28B', key=f'b28b_fr1_{specifc_name}', value=lb_all_fr1_checked(lb_all_fr1_state))
+                'N28B', key=f'b28b_fr1_{specifc_name}', value=st.session_state[f'lb_all_fr1_{specifc_name}'])
             b29_fr1_state = col1_lb_fr1.checkbox(
-                'N29', key=f'b29_fr1_{specifc_name}', value=lb_all_fr1_checked(lb_all_fr1_state))
+                'N29', key=f'b29_fr1_{specifc_name}', value=st.session_state[f'lb_all_fr1_{specifc_name}'])
             b32_fr1_state = col1_lb_fr1.checkbox(
-                'N32', key=f'b32_fr1_{specifc_name}', value=lb_all_fr1_checked(lb_all_fr1_state))
+                'N32', key=f'b32_fr1_{specifc_name}', value=st.session_state[f'lb_all_fr1_{specifc_name}'])
             b71_fr1_state = col1_lb_fr1.checkbox(
-                'N71', key=f'b71_fr1_{specifc_name}', value=lb_all_fr1_checked(lb_all_fr1_state))
+                'N71', key=f'b71_fr1_{specifc_name}', value=st.session_state[f'lb_all_fr1_{specifc_name}'])
 
         with col2_mhb:
             # container
@@ -2151,37 +2153,37 @@ def tabs():
             mhb_all_fr1_state = col2_mhb_fr1.checkbox(
                 'MHB_ALL', key=f'mhb_all_fr1_{specifc_name}')
             b1_fr1_state = col2_mhb_fr1.checkbox(
-                'N1', key=f'b1_fr1_{specifc_name}', value=mhb_all_fr1_checked(mhb_all_fr1_state))
+                'N1', key=f'b1_fr1_{specifc_name}', value=st.session_state[f'mhb_all_fr1_{specifc_name}'])
             b2_fr1_state = col2_mhb_fr1.checkbox(
-                'N2', key=f'b2_fr1_{specifc_name}', value=mhb_all_fr1_checked(mhb_all_fr1_state))
+                'N2', key=f'b2_fr1_{specifc_name}', value=st.session_state[f'mhb_all_fr1_{specifc_name}'])
             b3_fr1_state = col2_mhb_fr1.checkbox(
-                'N3', key=f'b3_fr1_{specifc_name}', value=mhb_all_fr1_checked(mhb_all_fr1_state))
+                'N3', key=f'b3_fr1_{specifc_name}', value=st.session_state[f'mhb_all_fr1_{specifc_name}'])
             b7_fr1_state = col2_mhb_fr1.checkbox(
-                'N7', key=f'b7_fr1_{specifc_name}', value=mhb_all_fr1_checked(mhb_all_fr1_state))
+                'N7', key=f'b7_fr1_{specifc_name}', value=st.session_state[f'mhb_all_fr1_{specifc_name}'])
             b30_fr1_state = col2_mhb_fr1.checkbox(
-                'N30', key=f'b30_fr1_{specifc_name}', value=mhb_all_fr1_checked(mhb_all_fr1_state))
+                'N30', key=f'b30_fr1_{specifc_name}', value=st.session_state[f'mhb_all_fr1_{specifc_name}'])
             b25_fr1_state = col2_mhb_fr1.checkbox(
-                'N25', key=f'b25_fr1_{specifc_name}', value=mhb_all_fr1_checked(mhb_all_fr1_state))
+                'N25', key=f'b25_fr1_{specifc_name}', value=st.session_state[f'mhb_all_fr1_{specifc_name}'])
             b66_fr1_state = col2_mhb_fr1.checkbox(
-                'N66', key=f'b66_fr1_{specifc_name}', value=mhb_all_fr1_checked(mhb_all_fr1_state))
+                'N66', key=f'b66_fr1_{specifc_name}', value=st.session_state[f'mhb_all_fr1_{specifc_name}'])
             b70_fr1_state = col2_mhb_fr1.checkbox(
-                'N70', key=f'b70_fr1_{specifc_name}', value=mhb_all_fr1_checked(mhb_all_fr1_state))
+                'N70', key=f'b70_fr1_{specifc_name}', value=st.session_state[f'mhb_all_fr1_{specifc_name}'])
             b40_fr1_state = col2_mhb_fr1.checkbox(
-                'N40', key=f'b40_fr1_{specifc_name}', value=mhb_all_fr1_checked(mhb_all_fr1_state))
+                'N40', key=f'b40_fr1_{specifc_name}', value=st.session_state[f'mhb_all_fr1_{specifc_name}'])
             b38_fr1_state = col2_mhb_fr1.checkbox(
-                'N38', key=f'b38_fr1_{specifc_name}', value=mhb_all_fr1_checked(mhb_all_fr1_state))
+                'N38', key=f'b38_fr1_{specifc_name}', value=st.session_state[f'mhb_all_fr1_{specifc_name}'])
             b41_fr1_state = col2_mhb_fr1.checkbox(
-                'N41', key=f'b41_fr1_{specifc_name}', value=mhb_all_fr1_checked(mhb_all_fr1_state))
+                'N41', key=f'b41_fr1_{specifc_name}', value=st.session_state[f'mhb_all_fr1_{specifc_name}'])
             b34_fr1_state = col2_mhb_fr1.checkbox(
-                'N34', key=f'b34_fr1_{specifc_name}', value=mhb_all_fr1_checked(mhb_all_fr1_state))
+                'N34', key=f'b34_fr1_{specifc_name}', value=st.session_state[f'mhb_all_fr1_{specifc_name}'])
             b75_fr1_state = col2_mhb_fr1.checkbox(
-                'N75', key=f'b75_fr1_{specifc_name}', value=mhb_all_fr1_checked(mhb_all_fr1_state))
+                'N75', key=f'b75_fr1_{specifc_name}', value=st.session_state[f'mhb_all_fr1_{specifc_name}'])
             b76_fr1_state = col2_mhb_fr1.checkbox(
-                'N76', key=f'b76_fr1_{specifc_name}', value=mhb_all_fr1_checked(mhb_all_fr1_state))
+                'N76', key=f'b76_fr1_{specifc_name}', value=st.session_state[f'mhb_all_fr1_{specifc_name}'])
             b255_fr1_state = col2_mhb_fr1.checkbox(
-                'N255', key=f'b255_fr1_{specifc_name}', value=mhb_all_fr1_checked(mhb_all_fr1_state))
+                'N255', key=f'b255_fr1_{specifc_name}', value=st.session_state[f'mhb_all_fr1_{specifc_name}'])
             b256_fr1_state = col2_mhb_fr1.checkbox(
-                'N256', key=f'b256_fr1_{specifc_name}', value=mhb_all_fr1_checked(mhb_all_fr1_state))
+                'N256', key=f'b256_fr1_{specifc_name}', value=st.session_state[f'mhb_all_fr1_{specifc_name}'])
 
         with col3_uhb:
             # container
@@ -2194,13 +2196,13 @@ def tabs():
             uhb_all_fr1_state = col3_uhb_fr1.checkbox(
                 'UHB_ALL', key=f'uhb_all_fr1_{specifc_name}')
             b48_fr1_state = col3_uhb_fr1.checkbox(
-                'N48', key=f'b48_fr1_{specifc_name}', value=uhb_all_fr1_checked(uhb_all_fr1_state))
+                'N48', key=f'b48_fr1_{specifc_name}', value=st.session_state[f'uhb_all_fr1_{specifc_name}'])
             b77_fr1_state = col3_uhb_fr1.checkbox(
-                'N77', key=f'b77_fr1_{specifc_name}', value=uhb_all_fr1_checked(uhb_all_fr1_state))
+                'N77', key=f'b77_fr1_{specifc_name}', value=st.session_state[f'uhb_all_fr1_{specifc_name}'])
             b78_fr1_state = col3_uhb_fr1.checkbox(
-                'N78', key=f'b78_fr1_{specifc_name}', value=uhb_all_fr1_checked(uhb_all_fr1_state))
+                'N78', key=f'b78_fr1_{specifc_name}', value=st.session_state[f'uhb_all_fr1_{specifc_name}'])
             b79_fr1_state = col3_uhb_fr1.checkbox(
-                'N79', key=f'b79_fr1_{specifc_name}', value=uhb_all_fr1_checked(uhb_all_fr1_state))
+                'N79', key=f'b79_fr1_{specifc_name}', value=st.session_state[f'uhb_all_fr1_{specifc_name}'])
 
         # horizontal divider
         st.divider()
@@ -2286,37 +2288,37 @@ def tabs():
             lb_all_lte_state = col1_lb_lte.checkbox(
                 'LB_ALL', key=f'lb_all_lte_{specifc_name}')
             b5_lte_state = col1_lb_lte.checkbox(
-                'L5', key=f'b5_lte_{specifc_name}', value=lb_all_lte_checked(lb_all_lte_state))
+                'L5', key=f'b5_lte_{specifc_name}', value=st.session_state[f'lb_all_lte_{specifc_name}'])
             b8_lte_state = col1_lb_lte.checkbox(
-                'L8', key=f'b8_lte_{specifc_name}', value=lb_all_lte_checked(lb_all_lte_state))
+                'L8', key=f'b8_lte_{specifc_name}', value=st.session_state[f'lb_all_lte_{specifc_name}'])
             b12_lte_state = col1_lb_lte.checkbox(
-                'L12', key=f'b12_lte_{specifc_name}', value=lb_all_lte_checked(lb_all_lte_state))
+                'L12', key=f'b12_lte_{specifc_name}', value=st.session_state[f'lb_all_lte_{specifc_name}'])
             b13_lte_state = col1_lb_lte.checkbox(
-                'L13', key=f'b13_lte_{specifc_name}', value=lb_all_lte_checked(lb_all_lte_state))
+                'L13', key=f'b13_lte_{specifc_name}', value=st.session_state[f'lb_all_lte_{specifc_name}'])
             b14_lte_state = col1_lb_lte.checkbox(
-                'L14', key=f'b14_lte_{specifc_name}', value=lb_all_lte_checked(lb_all_lte_state))
+                'L14', key=f'b14_lte_{specifc_name}', value=st.session_state[f'lb_all_lte_{specifc_name}'])
             b17_lte_state = col1_lb_lte.checkbox(
-                'L17', key=f'b17_lte_{specifc_name}', value=lb_all_lte_checked(lb_all_lte_state))
+                'L17', key=f'b17_lte_{specifc_name}', value=st.session_state[f'lb_all_lte_{specifc_name}'])
             b18_lte_state = col1_lb_lte.checkbox(
-                'L18', key=f'b18_lte_{specifc_name}', value=lb_all_lte_checked(lb_all_lte_state))
+                'L18', key=f'b18_lte_{specifc_name}', value=st.session_state[f'lb_all_lte_{specifc_name}'])
             b19_lte_state = col1_lb_lte.checkbox(
-                'L19', key=f'b19_lte_{specifc_name}', value=lb_all_lte_checked(lb_all_lte_state))
+                'L19', key=f'b19_lte_{specifc_name}', value=st.session_state[f'lb_all_lte_{specifc_name}'])
             b20_lte_state = col1_lb_lte.checkbox(
-                'L20', key=f'b20_lte_{specifc_name}', value=lb_all_lte_checked(lb_all_lte_state))
+                'L20', key=f'b20_lte_{specifc_name}', value=st.session_state[f'lb_all_lte_{specifc_name}'])
             b24_lte_state = col1_lb_lte.checkbox(
-                'L24', key=f'b24_lte_{specifc_name}', value=lb_all_lte_checked(lb_all_lte_state))
+                'L24', key=f'b24_lte_{specifc_name}', value=st.session_state[f'lb_all_lte_{specifc_name}'])
             b26_lte_state = col1_lb_lte.checkbox(
-                'L26', key=f'b26_lte_{specifc_name}', value=lb_all_lte_checked(lb_all_lte_state))
+                'L26', key=f'b26_lte_{specifc_name}', value=st.session_state[f'lb_all_lte_{specifc_name}'])
             b28a_lte_state = col1_lb_lte.checkbox(
-                'L28A', key=f'b28a_lte_{specifc_name}', value=lb_all_lte_checked(lb_all_lte_state))
+                'L28A', key=f'b28a_lte_{specifc_name}', value=st.session_state[f'lb_all_lte_{specifc_name}'])
             b28b_lte_state = col1_lb_lte.checkbox(
-                'L28B', key=f'b28b_lte_{specifc_name}', value=lb_all_lte_checked(lb_all_lte_state))
+                'L28B', key=f'b28b_lte_{specifc_name}', value=st.session_state[f'lb_all_lte_{specifc_name}'])
             b29_lte_state = col1_lb_lte.checkbox(
-                'L29', key=f'b29_lte_{specifc_name}', value=lb_all_lte_checked(lb_all_lte_state))
+                'L29', key=f'b29_lte_{specifc_name}', value=st.session_state[f'lb_all_lte_{specifc_name}'])
             b32_lte_state = col1_lb_lte.checkbox(
-                'L32', key=f'b32_lte_{specifc_name}', value=lb_all_lte_checked(lb_all_lte_state))
+                'L32', key=f'b32_lte_{specifc_name}', value=st.session_state[f'lb_all_lte_{specifc_name}'])
             b71_lte_state = col1_lb_lte.checkbox(
-                'L71', key=f'b71_lte_{specifc_name}', value=lb_all_lte_checked(lb_all_lte_state))
+                'L71', key=f'b71_lte_{specifc_name}', value=st.session_state[f'lb_all_lte_{specifc_name}'])
 
         with col2_mhb:
             # container
@@ -2329,37 +2331,37 @@ def tabs():
             mhb_all_lte_state = col2_mhb_lte.checkbox(
                 'MHB_ALL', key=f'mhb_all_lte_{specifc_name}')
             b1_lte_state = col2_mhb_lte.checkbox(
-                'L1', key=f'b1_lte_{specifc_name}', value=mhb_all_lte_checked(mhb_all_lte_state))
+                'L1', key=f'b1_lte_{specifc_name}', value=st.session_state[f'mhb_all_lte_{specifc_name}'])
             b2_lte_state = col2_mhb_lte.checkbox(
-                'L2', key=f'b2_lte_{specifc_name}', value=mhb_all_lte_checked(mhb_all_lte_state))
+                'L2', key=f'b2_lte_{specifc_name}', value=st.session_state[f'mhb_all_lte_{specifc_name}'])
             b3_lte_state = col2_mhb_lte.checkbox(
-                'L3', key=f'b3_lte_{specifc_name}', value=mhb_all_lte_checked(mhb_all_lte_state))
+                'L3', key=f'b3_lte_{specifc_name}', value=st.session_state[f'mhb_all_lte_{specifc_name}'])
             b7_lte_state = col2_mhb_lte.checkbox(
-                'L7', key=f'b7_lte_{specifc_name}', value=mhb_all_lte_checked(mhb_all_lte_state))
+                'L7', key=f'b7_lte_{specifc_name}', value=st.session_state[f'mhb_all_lte_{specifc_name}'])
             b30_lte_state = col2_mhb_lte.checkbox(
-                'L30', key=f'b30_lte_{specifc_name}', value=mhb_all_lte_checked(mhb_all_lte_state))
+                'L30', key=f'b30_lte_{specifc_name}', value=st.session_state[f'mhb_all_lte_{specifc_name}'])
             b25_lte_state = col2_mhb_lte.checkbox(
-                'L25', key=f'b25_lte_{specifc_name}', value=mhb_all_lte_checked(mhb_all_lte_state))
+                'L25', key=f'b25_lte_{specifc_name}', value=st.session_state[f'mhb_all_lte_{specifc_name}'])
             b66_lte_state = col2_mhb_lte.checkbox(
-                'L66', key=f'b66_lte_{specifc_name}', value=mhb_all_lte_checked(mhb_all_lte_state))
+                'L66', key=f'b66_lte_{specifc_name}', value=st.session_state[f'mhb_all_lte_{specifc_name}'])
             b70_lte_state = col2_mhb_lte.checkbox(
-                'L70', key=f'b70_lte_{specifc_name}', value=mhb_all_lte_checked(mhb_all_lte_state))
+                'L70', key=f'b70_lte_{specifc_name}', value=st.session_state[f'mhb_all_lte_{specifc_name}'])
             b39_lte_state = col2_mhb_lte.checkbox(
-                'L39', key=f'b39_lte_{specifc_name}', value=mhb_all_lte_checked(mhb_all_lte_state))
+                'L39', key=f'b39_lte_{specifc_name}', value=st.session_state[f'mhb_all_lte_{specifc_name}'])
             b40_lte_state = col2_mhb_lte.checkbox(
-                'L40', key=f'b40_lte_{specifc_name}', value=mhb_all_lte_checked(mhb_all_lte_state))
+                'L40', key=f'b40_lte_{specifc_name}', value=st.session_state[f'mhb_all_lte_{specifc_name}'])
             b38_lte_state = col2_mhb_lte.checkbox(
-                'L38', key=f'b38_lte_{specifc_name}', value=mhb_all_lte_checked(mhb_all_lte_state))
+                'L38', key=f'b38_lte_{specifc_name}', value=st.session_state[f'mhb_all_lte_{specifc_name}'])
             b41_lte_state = col2_mhb_lte.checkbox(
-                'L41', key=f'b41_lte_{specifc_name}', value=mhb_all_lte_checked(mhb_all_lte_state))
+                'L41', key=f'b41_lte_{specifc_name}', value=st.session_state[f'mhb_all_lte_{specifc_name}'])
             b23_lte_state = col2_mhb_lte.checkbox(
-                'L23', key=f'b23_lte_{specifc_name}', value=mhb_all_lte_checked(mhb_all_lte_state))
+                'L23', key=f'b23_lte_{specifc_name}', value=st.session_state[f'mhb_all_lte_{specifc_name}'])
             b34_lte_state = col2_mhb_lte.checkbox(
-                'L34', key=f'b34_lte_{specifc_name}', value=mhb_all_lte_checked(mhb_all_lte_state))
+                'L34', key=f'b34_lte_{specifc_name}', value=st.session_state[f'mhb_all_lte_{specifc_name}'])
             b75_lte_state = col2_mhb_lte.checkbox(
-                'L75', key=f'b75_lte_{specifc_name}', value=mhb_all_lte_checked(mhb_all_lte_state))
+                'L75', key=f'b75_lte_{specifc_name}', value=st.session_state[f'mhb_all_lte_{specifc_name}'])
             b76_lte_state = col2_mhb_lte.checkbox(
-                'L76', key=f'b76_lte_{specifc_name}', value=mhb_all_lte_checked(mhb_all_lte_state))
+                'L76', key=f'b76_lte_{specifc_name}', value=st.session_state[f'mhb_all_lte_{specifc_name}'])
 
         with col3_uhb:
             # container
@@ -2372,9 +2374,9 @@ def tabs():
             uhb_all_lte_state = col3_uhb_lte.checkbox(
                 'UHB_ALL', key=f'uhb_all_lte_{specifc_name}')
             b42_lte_state = col3_uhb_lte.checkbox(
-                'L42', key=f'b42_lte_{specifc_name}', value=uhb_all_lte_checked(uhb_all_lte_state))
+                'L42', key=f'b42_lte_{specifc_name}', value=st.session_state[f'uhb_all_lte_{specifc_name}'])
             b48_lte_state = col3_uhb_lte.checkbox(
-                'L48', key=f'b48_lte_{specifc_name}', value=uhb_all_lte_checked(uhb_all_lte_state))
+                'L48', key=f'b48_lte_{specifc_name}', value=st.session_state[f'uhb_all_lte_{specifc_name}'])
 
     with rssiscan_tab:
         pass
