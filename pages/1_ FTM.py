@@ -839,11 +839,11 @@ def tabs():
                 tx_level = slider(
                     'Tx level excluding level sweep', min_value=-40, max_value=30, step=1, value=27, key=f'tx_level_{specifc_name}')
 
-                # Tx level sweep
-                tx_level_sweep_start = slider(
-                    'Tx level sweep start', min_value=-40, max_value=30, step=1, value=-20, key=f'tx_level_sweep_start_{specifc_name}')
-                tx_level_sweep_stop = slider(
-                    'Tx level sweep stop', min_value=-40, max_value=30, step=1, value=27, key=f'tx_level_sweep_stop_{specifc_name}')
+                # # Tx level sweep
+                # tx_level_sweep_start = slider(
+                #     'Tx level sweep start', min_value=-40, max_value=30, step=1, value=-20, key=f'tx_level_sweep_start_{specifc_name}')
+                # tx_level_sweep_stop = slider(
+                #     'Tx level sweep stop', min_value=-40, max_value=30, step=1, value=27, key=f'tx_level_sweep_stop_{specifc_name}')
 
         with col2_m:
             # container
@@ -855,41 +855,7 @@ def tabs():
                 # Tx LMH
                 tx_lmh_state = checkbox(
                     'Tx LMH', key=f'tx_lmh_{specifc_name}')
-
-                # Rx
-                rx_state = checkbox('Rx', key=f'rx_{specifc_name}')
-
-                # Rx_quick
-                rx_quick_state = checkbox(
-                    'Rx Quick', key=f'rx_quick_{specifc_name}')
-
-                # Tx level sweep
-                tx_level_sweep_state = checkbox(
-                    'Tx level sweep', key=f'tx_level_sweep_{specifc_name}')
-
-                # Tx Freq sweep
-                tx_freq_sweep_state = checkbox(
-                    'Tx Freq sweep', key=f'tx_freq_sweep_{specifc_name}')
-
-                # Tx 1RB sweep
-                tx_1rb_sweep_state = checkbox(
-                    'Tx 1RB sweep(only for FR1)', key=f'tx_1rb_sweep_{specifc_name}')
-
-                # horizontal divider
-                st.divider()
-
-                # text
-                st.text('UE power(only for Rx)')
-
-                # if rx or rx_quick are checked one of them
-                if rx_state | rx_quick_state:
-                    st.session_state[f'tx_max_{specifc_name}'] = True
-                    st.session_state[f'tx_-10_{specifc_name}'] = True
-
-                tx_max_state = checkbox('TxMax', key=f'tx_max_{specifc_name}')
-                tx_minus10_state = checkbox(
-                    'Tx_-10', key=f'tx_-10_{specifc_name}')
-
+                
         with col3_m:
             # container
             with st.container():
@@ -900,19 +866,19 @@ def tabs():
                 # FR1
                 fr1_state = checkbox(
                     'FR1', key=f'fr1_{specifc_name}')
+                
+                # # LTE
+                # lte_state = checkbox(
+                #     'LTE', key=f'lte_{specifc_name}')
 
-                # LTE
-                lte_state = checkbox(
-                    'LTE', key=f'lte_{specifc_name}')
+                # # WCDMA
+                # wcdma_state = checkbox(
+                #     'WCDMA', key=f'wcdma_{specifc_name}')
 
-                # WCDMA
-                wcdma_state = checkbox(
-                    'WCDMA', key=f'wcdma_{specifc_name}')
-
-                # GSM
-                fsm_state = checkbox(
-                    'GSM', key=f'gsm_{specifc_name}')
-
+                # # GSM
+                # fsm_state = checkbox(
+                #     'GSM', key=f'gsm_{specifc_name}')
+               
                 # horizontal divider
                 st.divider()
 
@@ -934,8 +900,8 @@ def tabs():
         # horizontal divider
         st.divider()
 
-        # Seperate 3 columns
-        col1_path, col2_path, col3_path = st.columns(3)
+        # Seperate 2 columns
+        col1_path, col2_path = st.columns(2)
 
         with col1_path:
             # container
@@ -954,44 +920,9 @@ def tabs():
 
                 # MIMO
                 mimo_state = checkbox(
-                    'MIMO', key=f'mimo_path_{specifc_name}')
+                    'MIMO', key=f'mimo_path_{specifc_name}',disabled=True)
 
         with col2_path:
-            # container
-            with st.container():
-
-                # text
-                st.text('Rx Path')
-
-                # RX0
-                rx0_state = checkbox(
-                    'RX0', key=f'rx0_{specifc_name}')
-
-                # RX1
-                rx1_state = checkbox(
-                    'RX1', key=f'rx1_{specifc_name}')
-
-                # RX2
-                rx2_state = checkbox(
-                    'RX2', key=f'rx2_{specifc_name}')
-
-                # RX3
-                rx3_state = checkbox(
-                    'RX3', key=f'rx3_{specifc_name}')
-
-                # RX0+RX1
-                rx0rx1_state = checkbox(
-                    'RX0RX1', key=f'rx0rx1_{specifc_name}')
-
-                # RX2+RX3
-                rx2rx3_state = checkbox(
-                    'RX2RX3', key=f'rx2rx3_{specifc_name}')
-
-                # RX0+RX1+RX2+RX3
-                rx0rx1rx2rx3_state = checkbox(
-                    'RX0RX1RX2RX3', key=f'rx0r1rx2rx3_{specifc_name}')
-
-        with col3_path:
             # container
             with st.container():
 
@@ -1011,17 +942,17 @@ def tabs():
                 srs_path_enable_state = checkbox(
                     'SRS enable', key=f'srs_path_eable_{specifc_name}')
 
-                # freq sweep steps
-                freq_sweep_step = text_input(
-                    'Tx_Freq_Sweep_Step(KHz) only for FR1 and LTE', value=1000, key=f'freq_step_{specifc_name}')
+                # # freq sweep steps
+                # freq_sweep_step = text_input(
+                #     'Tx_Freq_Sweep_Step(KHz) only for FR1 and LTE', value=1000, key=f'freq_step_{specifc_name}')
 
-                # freq sweep start
-                freq_sweep_start = text_input(
-                    'Tx_Freq_Sweep_Start(KHz) only for FR1 and LTE', value=0, key=f'freq_start_{specifc_name}')
+                # # freq sweep start
+                # freq_sweep_start = text_input(
+                #     'Tx_Freq_Sweep_Start(KHz) only for FR1 and LTE', value=0, key=f'freq_start_{specifc_name}')
 
-                # freq sweep stop
-                freq_sweep_stop = text_input(
-                    'Tx_Freq_Sweep_Start(KHz) only for FR1 and LTE', value=0, key=f'freq_stop_{specifc_name}')
+                # # freq sweep stop
+                # freq_sweep_stop = text_input(
+                #     'Tx_Freq_Sweep_Start(KHz) only for FR1 and LTE', value=0, key=f'freq_stop_{specifc_name}')
 
         # horizontal divider
         st.divider()
@@ -1350,11 +1281,11 @@ def tabs():
                 tx_level = slider(
                     'Tx level excluding level sweep', min_value=-40, max_value=30, step=1, value=27, key=f'tx_level_{specifc_name}')
 
-                # Tx level sweep
-                tx_level_sweep_start = slider(
-                    'Tx level sweep start', min_value=-40, max_value=30, step=1, value=-20, key=f'tx_level_sweep_start_{specifc_name}')
-                tx_level_sweep_stop = slider(
-                    'Tx level sweep stop', min_value=-40, max_value=30, step=1, value=27, key=f'tx_level_sweep_stop_{specifc_name}')
+                # # Tx level sweep
+                # tx_level_sweep_start = slider(
+                #     'Tx level sweep start', min_value=-40, max_value=30, step=1, value=-20, key=f'tx_level_sweep_start_{specifc_name}')
+                # tx_level_sweep_stop = slider(
+                #     'Tx level sweep stop', min_value=-40, max_value=30, step=1, value=27, key=f'tx_level_sweep_stop_{specifc_name}')
 
         with col2_m:
             # container
@@ -1367,39 +1298,20 @@ def tabs():
                 tx_lmh_state = checkbox(
                     'Tx LMH', key=f'tx_lmh_{specifc_name}')
 
-                # Rx
-                rx_state = checkbox('Rx', key=f'rx_{specifc_name}')
-
-                # Rx_quick
-                rx_quick_state = checkbox(
-                    'Rx Quick', key=f'rx_quick_{specifc_name}')
-
-                # Tx level sweep
-                tx_level_sweep_state = checkbox(
-                    'Tx level sweep', key=f'tx_level_sweep_{specifc_name}')
-
-                # Tx Freq sweep
-                tx_freq_sweep_state = checkbox(
-                    'Tx Freq sweep', key=f'tx_freq_sweep_{specifc_name}')
-
-                # Tx 1RB sweep
-                tx_1rb_sweep_state = checkbox(
-                    'Tx 1RB sweep(only for FR1)', key=f'tx_1rb_sweep_{specifc_name}')
-
                 # horizontal divider
                 st.divider()
 
-                # text
-                st.text('UE power(only for Rx)')
+                # # text
+                # st.text('UE power(only for Rx)')
 
-                # if rx or rx_quick are checked one of them
-                if rx_state | rx_quick_state:
-                    st.session_state[f'tx_max_{specifc_name}'] = True
-                    st.session_state[f'tx_-10_{specifc_name}'] = True
+                # # if rx or rx_quick are checked one of them
+                # if rx_state | rx_quick_state:
+                #     st.session_state[f'tx_max_{specifc_name}'] = True
+                #     st.session_state[f'tx_-10_{specifc_name}'] = True
 
-                tx_max_state = checkbox('TxMax', key=f'tx_max_{specifc_name}')
-                tx_minus10_state = checkbox(
-                    'Tx_-10', key=f'tx_-10_{specifc_name}')
+                # tx_max_state = checkbox('TxMax', key=f'tx_max_{specifc_name}')
+                # tx_minus10_state = checkbox(
+                #     'Tx_-10', key=f'tx_-10_{specifc_name}')
 
         with col3_m:
             # container
@@ -1412,17 +1324,17 @@ def tabs():
                 fr1_state = checkbox(
                     'FR1', key=f'fr1_{specifc_name}')
 
-                # LTE
-                lte_state = checkbox(
-                    'LTE', key=f'lte_{specifc_name}')
+                # # LTE
+                # lte_state = checkbox(
+                #     'LTE', key=f'lte_{specifc_name}')
 
-                # WCDMA
-                wcdma_state = checkbox(
-                    'WCDMA', key=f'wcdma_{specifc_name}')
+                # # WCDMA
+                # wcdma_state = checkbox(
+                #     'WCDMA', key=f'wcdma_{specifc_name}')
 
-                # GSM
-                fsm_state = checkbox(
-                    'GSM', key=f'gsm_{specifc_name}')
+                # # GSM
+                # fsm_state = checkbox(
+                #     'GSM', key=f'gsm_{specifc_name}')
 
                 # horizontal divider
                 st.divider()
@@ -1446,7 +1358,7 @@ def tabs():
         st.divider()
 
         # Seperate 3 columns
-        col1_path, col2_path, col3_path = st.columns(3)
+        col1_path, col2_path = st.columns(2)
 
         with col1_path:
             # container
@@ -1465,44 +1377,9 @@ def tabs():
 
                 # MIMO
                 mimo_state = checkbox(
-                    'MIMO', key=f'mimo_path_{specifc_name}')
+                    'MIMO', key=f'mimo_path_{specifc_name}',disabled=True)
 
         with col2_path:
-            # container
-            with st.container():
-
-                # text
-                st.text('Rx Path')
-
-                # RX0
-                rx0_state = checkbox(
-                    'RX0', key=f'rx0_{specifc_name}')
-
-                # RX1
-                rx1_state = checkbox(
-                    'RX1', key=f'rx1_{specifc_name}')
-
-                # RX2
-                rx2_state = checkbox(
-                    'RX2', key=f'rx2_{specifc_name}')
-
-                # RX3
-                rx3_state = checkbox(
-                    'RX3', key=f'rx3_{specifc_name}')
-
-                # RX0+RX1
-                rx0rx1_state = checkbox(
-                    'RX0RX1', key=f'rx0rx1_{specifc_name}')
-
-                # RX2+RX3
-                rx2rx3_state = checkbox(
-                    'RX2RX3', key=f'rx2rx3_{specifc_name}')
-
-                # RX0+RX1+RX2+RX3
-                rx0rx1rx2rx3_state = checkbox(
-                    'RX0RX1RX2RX3', key=f'rx0r1rx2rx3_{specifc_name}')
-
-        with col3_path:
             # container
             with st.container():
 
@@ -2240,11 +2117,11 @@ def tabs():
                 tx_level = slider(
                     'Tx level excluding level sweep', min_value=-40, max_value=30, step=1, value=27, key=f'tx_level_{specifc_name}')
 
-                # Tx level sweep
-                tx_level_sweep_start = slider(
-                    'Tx level sweep start', min_value=-40, max_value=30, step=1, value=-20, key=f'tx_level_sweep_start_{specifc_name}')
-                tx_level_sweep_stop = slider(
-                    'Tx level sweep stop', min_value=-40, max_value=30, step=1, value=27, key=f'tx_level_sweep_stop_{specifc_name}')
+                # # Tx level sweep
+                # tx_level_sweep_start = slider(
+                #     'Tx level sweep start', min_value=-40, max_value=30, step=1, value=-20, key=f'tx_level_sweep_start_{specifc_name}')
+                # tx_level_sweep_stop = slider(
+                #     'Tx level sweep stop', min_value=-40, max_value=30, step=1, value=27, key=f'tx_level_sweep_stop_{specifc_name}')
 
         with col2_m:
             # container
@@ -2264,17 +2141,17 @@ def tabs():
                 # horizontal divider
                 st.divider()
 
-                # text
-                st.text('UE power(only for Rx)')
+                # # text
+                # st.text('UE power(only for Rx)')
 
-                # if rx or rx_quick are checked one of them
-                if rx_state | rx_quick_state:
-                    st.session_state[f'tx_max_{specifc_name}'] = True
-                    st.session_state[f'tx_-10_{specifc_name}'] = True
+                # # if rx or rx_quick are checked one of them
+                # if rx_state | rx_quick_state:
+                #     st.session_state[f'tx_max_{specifc_name}'] = True
+                #     st.session_state[f'tx_-10_{specifc_name}'] = True
 
-                tx_max_state = checkbox('TxMax', key=f'tx_max_{specifc_name}')
-                tx_minus10_state = checkbox(
-                    'Tx_-10', key=f'tx_-10_{specifc_name}')
+                # tx_max_state = checkbox('TxMax', key=f'tx_max_{specifc_name}')
+                # tx_minus10_state = checkbox(
+                #     'Tx_-10', key=f'tx_-10_{specifc_name}')
 
         with col3_m:
             # container
