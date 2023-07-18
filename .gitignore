@@ -1,6 +1,7 @@
 # created by virtualenv automatically
 *.csv
-/venv
+/venv*
 /Python311
 __pycache__/
 .idea/
+/.vscode
