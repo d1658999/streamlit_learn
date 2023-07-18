@@ -116,10 +116,10 @@ def tabs():
                 # text
                 st.text('UE power(only for Rx)')
 
-                # if rx or rx_quick are checked one of them
-                if rx_state | rx_quick_state:
-                    st.session_state[f'tx_max_{specifc_name}'] = True
-                    st.session_state[f'tx_-10_{specifc_name}'] = True
+                # # if rx or rx_quick are checked one of them
+                # if rx_state | rx_quick_state:
+                #     st.session_state[f'tx_max_{specifc_name}'] = True
+                #     st.session_state[f'tx_-10_{specifc_name}'] = True
 
                 tx_max_state = checkbox('TxMax', key=f'tx_max_{specifc_name}')
                 tx_minus10_state = checkbox(
@@ -855,7 +855,7 @@ def tabs():
                 # Tx LMH
                 tx_lmh_state = checkbox(
                     'Tx LMH', key=f'tx_lmh_{specifc_name}')
-                
+
         with col3_m:
             # container
             with st.container():
@@ -866,7 +866,7 @@ def tabs():
                 # FR1
                 fr1_state = checkbox(
                     'FR1', key=f'fr1_{specifc_name}')
-                
+
                 # # LTE
                 # lte_state = checkbox(
                 #     'LTE', key=f'lte_{specifc_name}')
@@ -878,7 +878,7 @@ def tabs():
                 # # GSM
                 # fsm_state = checkbox(
                 #     'GSM', key=f'gsm_{specifc_name}')
-               
+
                 # horizontal divider
                 st.divider()
 
@@ -920,7 +920,7 @@ def tabs():
 
                 # MIMO
                 mimo_state = checkbox(
-                    'MIMO', key=f'mimo_path_{specifc_name}',disabled=True)
+                    'MIMO', key=f'mimo_path_{specifc_name}', disabled=True)
 
         with col2_path:
             # container
@@ -1377,7 +1377,7 @@ def tabs():
 
                 # MIMO
                 mimo_state = checkbox(
-                    'MIMO', key=f'mimo_path_{specifc_name}',disabled=True)
+                    'MIMO', key=f'mimo_path_{specifc_name}', disabled=True)
 
         with col2_path:
             # container
@@ -1742,7 +1742,7 @@ def tabs():
 
                 # Tx level select except level sweep
                 tx_level = slider(
-                    'Tx level excluding level sweep', min_value=-40, max_value=30, step=1,value=27, key=f'tx_level_{specifc_name}')
+                    'Tx level excluding level sweep', min_value=-40, max_value=30, step=1, value=27, key=f'tx_level_{specifc_name}')
 
         with col2_m:
             # container
@@ -1870,13 +1870,13 @@ def tabs():
 
                 # AS path
                 as_path = number_input(
-                    'AS Path', min_value=0, max_value=1, step=1,value=0, key=f'as_path_{specifc_name}')
+                    'AS Path', min_value=0, max_value=1, step=1, value=0, key=f'as_path_{specifc_name}')
                 as_path_enable_state = checkbox(
                     'AS enable', key=f'as_path_eable_{specifc_name}')
 
                 # SRS path
                 srs_path = number_input(
-                    'SRS Path', min_value=0, max_value=3, step=1,value=0, key=f'srs_path_{specifc_name}', disabled=True)
+                    'SRS Path', min_value=0, max_value=3, step=1, value=0, key=f'srs_path_{specifc_name}', disabled=True)
                 srs_path_enable_state = checkbox(
                     'SRS enable', key=f'srs_path_eable_{specifc_name}', disabled=True)
 
@@ -1906,7 +1906,7 @@ def tabs():
                     # bw_lte
                     bw_ulca_lte_all_state = checkbox(
                         'BW ALL', key=f'bw_ulca_lte_{specifc_name}')
-                    
+
                     # if BW_ALL checked
                     if bw_ulca_lte_all_state:
                         st.session_state[f'bw20_5_lte_{specifc_name}'] = True
@@ -1924,7 +1924,6 @@ def tabs():
                         st.session_state[f'bw10_10_lte_{specifc_name}'] = True
                         st.session_state[f'bw5_15_lte_{specifc_name}'] = True
                         st.session_state[f'bw15_5_lte_{specifc_name}'] = True
-
 
                     else:
                         st.session_state[f'bw20_5_lte_{specifc_name}'] = False
@@ -2048,8 +2047,6 @@ def tabs():
                     # MHB
                     mhb_ulca_all_lte_state = checkbox(
                         'MHB_ALL', key=f'mhb_all_lte_{specifc_name}')
-                    
-
 
                     b1c_lte_state = checkbox(
                         'L1C', key=f'b1c_lte_{specifc_name}')

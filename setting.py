@@ -91,6 +91,6 @@ def radio(label, options, key, args=[], disabled=False):
 
     unkeep(key)
     res = st.radio(label, options=options,
-                       key=f'_{key}', on_change=keep, args=args, disabled=disabled)
+                   key=f'_{key}', on_change=keep, args=args, disabled=disabled)
 
     return res
